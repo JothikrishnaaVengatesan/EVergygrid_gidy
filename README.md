@@ -1,4 +1,35 @@
-# EVergygrid_gidy
+## Problem Theme:
+### Driving A Trillion Dollar Economy!
+
+## Problem Statement:
+Electric scooters (EV scooties) rely heavily on grid charging, leading to increased dependency 
+on external power sources, longer charging times, and potential range anxiety. 
+
+Traditional battery systems require frequent plug-in charging, limiting their efficiency, 
+especially in areas with limited charging infrastructure.                         
+
+The growing demand for sustainable transportation requires an innovative solution 
+that integrates renewable energy sources into electric vehicles.
+
+Current EVs rely heavily on external charging infrastructure, increasing 
+dependency on the grid.
+
+## Objective:
+```
+The primary objective of this system is to integrate solar and wind energy harvesting into an electric scooty, enabling it to charge itself while in motion or when parked. This concept reduces dependency on external charging, enhances energy efficiency, and makes the vehicle more sustainable and eco-friendly.
+
+Key Goals
+✅ Develop a microgrid system within the scooty to store and utilize 
+solar energy.
+✅ Reduce the strain on the main battery and improve its lifespan.
+✅ Increase the energy efficiency of the scooty by using solar & 
+wind energy for various functions.
+✅ Reduce reliance on charging stations, making EVs more
+ practical for long-distance travel.
+✅ Introduce smart energy management for optimal power 
+distribution.
+```
+
 
 ## STEPS:
 ```
@@ -83,75 +114,7 @@ Edit
 git pull origin main
 Repeat Steps 4 & 5 when making updates.
 ```
-## Folder Structure
-```
-/microgrid-ev-scooty/
-│── firmware/          # Microcontroller code (ESP32, Arduino, etc.)
-│── software/          # Web dashboard & monitoring system
-│── algorithms/        # MPPT, BMS, EMS control logic
-│── hardware/          # Circuit schematics & PCB designs
-│── documentation/     # Project overview, architecture & references
-│── README.md          # Project details & setup instructions
-```
 
-## 1. Firmware Code (ESP32/Arduino) - firmware/main.ino
-~~~cpp
-#include <Wire.h>
-#include <WiFi.h>
-#include "MPPTController.h" // Custom MPPT algorithm
-#include "BMSController.h"  // Battery Management System
-
-#define SOLAR_PIN 34
-#define WIND_PIN 35
-#define BATTERY_PIN 36
-
-float solarVoltage, windVoltage, batteryLevel;
-
-void setup() {
-    Serial.begin(115200);
-    MPPT_init();
-    BMS_init();
-}
-
-void loop() {
-    solarVoltage = analogRead(SOLAR_PIN) * (5.0 / 1023.0);
-    windVoltage = analogRead(WIND_PIN) * (5.0 / 1023.0);
-    batteryLevel = analogRead(BATTERY_PIN) * (5.0 / 1023.0);
-
-    MPPT_optimize(solarVoltage, windVoltage);
-    BMS_manage(batteryLevel);
-    delay(1000);
-}
-~~~
-
-## 2. Web Dashboard Code (Node.js + Express) - software/server.js
-~~~javascript
-const express = require("express");
-const app = express();
-const port = 3000;
-
-let batteryStatus = 75;
-let solarInput = 12.5;
-let windInput = 8.3;
-
-app.get("/status", (req, res) => {
-    res.json({ battery: batteryStatus, solar: solarInput, wind: windInput });
-});
-
-app.listen(port, () => console.log(`Server running on port ${port}`));
-~~~
-
-## 3. MPPT Algorithm - algorithms/mppt.py
-~~~python
-def mppt_optimize(solar_voltage, wind_voltage):
-    optimal_power = max(solar_voltage * 0.95, wind_voltage * 0.90)
-    return optimal_power
-~~~
-
-## 4. README.md
-md
-# QuantumScape-Integrated Microgrid Scooty
-This project integrates **QuantumScape solid-state batteries** with a solar-wind hybrid microgrid in an electric scooty.
 
 ## Features
 - Self-charging via **solar panels & wind turbines**
