@@ -117,7 +117,14 @@ Edit
 git pull origin main
 Repeat Steps 4 & 5 when making updates.
 ```
+### 1. Firmware Code (`firmware/main.ino`)
+This folder contains the microcontroller code written for the **ESP32** (or other compatible platforms like Arduino). The firmware handles the reading of solar, wind, and battery voltages, and integrates with the **MPPT** and **BMS** logic to optimize the system's energy consumption.
 
+### 2. Web Dashboard Code (software/server.js)
+This folder contains the backend for a real-time IoT dashboard built using Node.js and Express. The dashboard provides a live status of the system's battery, solar input, and wind input.
+
+### 3. MPPT Algorithm (algorithms/mppt.py)
+The MPPT algorithm optimizes the solar and wind inputs to maximize power generation. This Python script provides the logic used to determine the optimal power between solar and wind inputs.
 
 ## Features
 - Self-charging via **solar panels & wind turbines**
