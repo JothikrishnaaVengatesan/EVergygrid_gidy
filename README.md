@@ -1,6 +1,7 @@
 # EVergygrid_gidy
 
 ## STEPS:
+```
 Step 1: Install VS Code & Setup Git
 Download & Install VS Code – Download Here
 Install Git – Download Here
@@ -81,9 +82,9 @@ Copy
 Edit
 git pull origin main
 Repeat Steps 4 & 5 when making updates.
-
+```
 ## Folder Structure
-
+```
 /microgrid-ev-scooty/
 │── firmware/          # Microcontroller code (ESP32, Arduino, etc.)
 │── software/          # Web dashboard & monitoring system
@@ -91,7 +92,7 @@ Repeat Steps 4 & 5 when making updates.
 │── hardware/          # Circuit schematics & PCB designs
 │── documentation/     # Project overview, architecture & references
 │── README.md          # Project details & setup instructions
-
+```
 
 ## 1. Firmware Code (ESP32/Arduino) - firmware/main.ino
 ~~~cpp
