@@ -1,6 +1,9 @@
 ## Problem Theme:
 ### Driving A Trillion Dollar Economy!
 
+## Problem Statement Title :
+### EVergy Grid
+
 ## Problem Statement:
 Electric scooters (EV scooties) rely heavily on grid charging, leading to increased dependency 
 on external power sources, longer charging times, and potential range anxiety. 
